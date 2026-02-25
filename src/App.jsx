@@ -1,35 +1,30 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useMemo } from 'react'
+import { useEffect } from 'react'
 import './App.css'
+import GenerateBoard from './board.jsx'
 
-function App() {
-  const [count, setCount] = useState(0)
+function Memory() {
+  const [currentScore, setCurrentScore] = useState(0)
+  const [bestScore, setBestScore] = useState(0)
+
+
+
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <header id='header'>
+      <div id='headerText'>
+        <h2>Pokemon Memory Game</h2>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div id='scoreBox'>
+        <div id='currentScore'>Current: {currentScore}</div>
+        <div id='bestScore'>Best: {bestScore}</div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    </header>
+    <div><GenerateBoard /></div>
     </>
   )
 }
 
-export default App
+export default Memory

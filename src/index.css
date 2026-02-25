@@ -66,3 +66,49 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+#headerText {
+  background-color: #535bf2;
+  width: 1000px;
+}
+
+#scoreBox {
+  margin-top: 10px;
+}
+
+#currentScore {
+  color: aqua;
+  background-color: #213547;
+}
+
+#bestScore {
+  color: aquamarine;
+  background-color: #213547;
+}
+
+.card {
+  background-color: white;
+  width: 100px;
+  height: 100px;
+}
+
+.cardImage {
+  background-color: black;
+  height: 50px;
+  width: 50px;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+}
