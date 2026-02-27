@@ -2,35 +2,69 @@ import { useState } from 'react'
 import { useMemo } from 'react'
 import { useEffect } from 'react'
 
-function GenerateBoard() {
+function PopulateCards() {
+const [numberOfDivs, setNumberOfDivs] = useState([]);
 
-const divNumber = 12;
+function addCards() {
+    const newDivItem = { id: Date.now(), content: `Div ${numberOfDivs.length + 1}` };
+  setNumberOfDivs(prevItems => [...prevItems, newDivItem]);
 
-const board = document.getElementById('board');
-
-for (let i = 1; i <= divNumber; i++) {
-
-    if (board) {
-        const card = document.createElement('div');
-        card.classList.add('card')
-        card.id = 'card-${i}';
-
-        const cardImage = document.createElement('div')
-        cardImage.classList.add('cardImage')
-        cardImage.id = 'cardImage-${i}';
-
-        board.appendChild(card)
-        card.appendChild(cardImage);
-    }
 }
-
-
 
 return (
 <>
-<div id='board'></div>
+<div id='card-grid'>
+    <div class='card'>
+        <div class='cardImage'></div>
+        <div class='cardText'></div>
+    </div>
+    <div class='card'>
+        <div class='cardImage'></div>
+        <div class='cardText'></div>
+    </div>
+    <div class='card'>
+        <div class='cardImage'></div>
+        <div class='cardText'></div>
+    </div>
+    <div class='card'>
+        <div class='cardImage'></div>
+        <div class='cardText'></div>
+    </div>
+    <div class='card'>
+        <div class='cardImage'></div>
+        <div class='cardText'></div>
+    </div>
+    <div class='card'>
+        <div class='cardImage'></div>
+        <div class='cardText'></div>
+    </div>
+    <div class='card'>
+        <div class='cardImage'></div>
+        <div class='cardText'></div>
+    </div>
+    <div class='card'>
+        <div class='cardImage'></div>
+        <div class='cardText'></div>
+    </div>
+    <div class='card'>
+        <div class='cardImage'></div>
+        <div class='cardText'></div>
+    </div>
+    <div class='card'>
+        <div class='cardImage'></div>
+        <div class='cardText'></div>
+    </div>
+    <div class='card'>
+        <div class='cardImage'></div>
+        <div class='cardText'></div>
+    </div>
+    <div class='card'>
+        <div class='cardImage'></div>
+        <div class='cardText'></div>
+    </div>
+</div>
 </>
 )
 }
 
-export default GenerateBoard
+export default PopulateCards

@@ -82,6 +82,8 @@ button:focus-visible {
 }
 
 #scoreBox {
+  display: flex;
+  flex-direction: column;
   margin-top: 10px;
 }
 
@@ -98,7 +100,10 @@ button:focus-visible {
 .card {
   background-color: white;
   width: 100px;
-  height: 100px;
+  height: 150px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .cardImage {
@@ -107,8 +112,8 @@ button:focus-visible {
   width: 50px;
 }
 
-#board {
+#card-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }

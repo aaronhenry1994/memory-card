@@ -8,7 +8,7 @@ function Memory() {
   const [currentScore, setCurrentScore] = useState(0)
   const [bestScore, setBestScore] = useState(0)
 
-
+  
 
 
   return (
