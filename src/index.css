@@ -104,12 +104,19 @@ button:focus-visible {
   margin: 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .cardImage {
   background-color: black;
   height: 50px;
   width: 50px;
+}
+
+.cardText {
+  color: black;
+  text-transform: capitalize;
 }
 
 #card-grid {

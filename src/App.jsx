@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useMemo } from 'react'
 import { useEffect } from 'react'
 import './App.css'
-import GenerateBoard from './board.jsx'
+import PopulateCards from './board.jsx'
 
 function Memory() {
   const [currentScore, setCurrentScore] = useState(0)
@@ -22,7 +22,7 @@ function Memory() {
         <div id='bestScore'>Best: {bestScore}</div>
       </div>
     </header>
-    <div><GenerateBoard /></div>
+    <div><PopulateCards /></div>
     </>
   )
 }
