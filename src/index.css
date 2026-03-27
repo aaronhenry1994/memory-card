@@ -99,6 +99,8 @@ button:focus-visible {
 
 .card {
   background-color: white;
+  outline-color: red;
+  outline-style: double;
   width: 100px;
   height: 150px;
   margin: 20px;

@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 
 function PopulateCards() {
 const [pokemon, setPokemon] = useState([]);
+const [randomPokemon, setRandom] = useState([]);
 
 const url = "https://pokeapi.co/api/v2/pokemon";
 const ditto = '/ditto';
@@ -33,72 +34,79 @@ useEffect(() => {
 pullPokes()
 }, [])
 
-function getRandomPoke() {
 
-    const randomPoke = pokemon[Math.floor(Math.random() * pokemon.length)];
 
+useEffect(() => {
+
+    function getRandomPoke() {
+
+    let tempArray = []
     if (pokemon.length > 0) {
-    console.log(randomPoke);
-    return randomPoke.name
+    for (let i = 0; i < 12; i++) {
+        const randomPoke = pokemon[Math.floor(Math.random() * pokemon.length)];
+        tempArray.push({name: randomPoke.name, sprite: randomPoke.sprites.front_default});
+    }
+    console.log(tempArray)
+    return setRandom(tempArray);
 }
-}
+    
+};
+getRandomPoke();
+}, [pokemon])
 
-const randomPokeName = getRandomPoke();
-const randomPoke2 = getRandomPoke();
-console.log(randomPokeName)
-console.log(randomPoke2);
-console.log(pokemon);
+console.log(pokemon)
+console.log(randomPokemon)
 
 return (
 <>
 <div id='card-grid'>
     <div class='card'>
-        <div class='cardText'>{getRandomPoke()}</div>
-        
+        <div id='cardTextZero' class='cardText'>{randomPokemon[0]?.name}</div>
+        <img id='cardZeroImg' src={randomPokemon[0]?.sprite} alt="" />
     </div>
     <div class='card'>
-        <div class='cardText'>{getRandomPoke()}</div>
-        <div class='cardImage'></div>
+        <div id='cardTextOne' class='cardText'>{randomPokemon[1]?.name}</div>
+        <img id='cardOneImg' src={randomPokemon[1]?.sprite} alt="" />
     </div>
     <div class='card'>
-        <div class='cardText'>{getRandomPoke()}</div>
-        <div class='cardImage'></div>
+        <div id='cardTextTwo' class='cardText'>{randomPokemon[2]?.name}</div>
+        <img id='cardTwoImg' src={randomPokemon[2]?.sprite} alt="" />
     </div>
     <div class='card'>
-        <div class='cardText'>{getRandomPoke()}</div>
-        <div class='cardImage'></div>
+        <div id='cardTextThree' class='cardText'>{randomPokemon[3]?.name}</div>
+        <img id='cardThreeImg' src={randomPokemon[3]?.sprite} alt="" />
     </div>
     <div class='card'>
-        <div class='cardText'>{getRandomPoke()}</div>
-        <div class='cardImage'></div>
+        <div id='cardTextFour' class='cardText'>{randomPokemon[4]?.name}</div>
+        <img id='cardFourImg' src={randomPokemon[4]?.sprite} alt="" />
     </div>
     <div class='card'>
-        <div class='cardText'>{getRandomPoke()}</div>
-        <div class='cardImage'></div>
+        <div id='cardTextFive' class='cardText'>{randomPokemon[5]?.name}</div>
+        <img id='cardFiveImg' src={randomPokemon[5]?.sprite} alt="" />
     </div>
     <div class='card'>
-        <div class='cardText'>{getRandomPoke()}</div>
-        <div class='cardImage'></div>
+        <div id='cardTextSix' class='cardText'>{randomPokemon[6]?.name}</div>
+        <img id='cardSixImg' src={randomPokemon[6]?.sprite} alt="" />
     </div>
     <div class='card'>
-        <div class='cardText'>{getRandomPoke()}</div>
-        <div class='cardImage'></div>
+        <div id='cardTextSeven' class='cardText'>{randomPokemon[7]?.name}</div>
+        <img id='cardSevenImg' src={randomPokemon[7]?.sprite} alt="" />
     </div>
     <div class='card'>
-        <div class='cardText'>{getRandomPoke()}</div>
-        <div class='cardImage'></div>
+        <div id='cardTextEight' class='cardText'>{randomPokemon[8]?.name}</div>
+        <img id='cardEightImg' src={randomPokemon[8]?.sprite} alt="" />
     </div>
     <div class='card'>
-        <div class='cardText'>{getRandomPoke()}</div>
-        <div class='cardImage'></div>
+        <div id='cardTextNine' class='cardText'>{randomPokemon[9]?.name}</div>
+        <img id='cardNineImg' src={randomPokemon[9]?.sprite} alt="" />
     </div>
     <div class='card'>
-        <div class='cardText'>{getRandomPoke()}</div>
-        <div class='cardImage'></div>
+        <div id='cardTextTen' class='cardText'>{randomPokemon[10]?.name}</div>
+        <img id='cardTenImg' src={randomPokemon[10]?.sprite} alt="" />
     </div>
     <div class='card'>
-        <div class='cardText'>{getRandomPoke()}</div>
-        <div class='cardImage'></div>
+        <div id='cardTextEleven' class='cardText'>{randomPokemon[11]?.name}</div>
+        <img id='cardElevenImg' src={randomPokemon[11]?.sprite} alt="" />
     </div>
 </div>
 </>
